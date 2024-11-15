@@ -1,0 +1,355 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1, h2, h3, p {
+    color: white;
+}
+.nav {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: none;
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+.nav h3 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 3px;
+    font-size: 20px;
+    position: fixed;
+    top: -6px;
+    left: 50px;
+}
+.menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.open-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: -250px; 
+    width: 250px;
+    height: 100%;
+    background-color: #00000081;
+    color: #ffffff;
+    transition: left 0.3s ease; 
+    z-index: 1000;
+    padding: 0;
+}
+
+.sideinfo {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+}
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.side-panel.open {
+    left: 0;
+    padding: 0 20px;
+}
+
+.header {
+    opacity: 1;
+    width: 100%;
+    height: calc(100vh - 100px);
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(-10vh);
+    align-items: center;
+    transition: .5s;
+}
+
+.box {
+    height: 100vh;
+    width: 100%;
+    margin-top: 100px;
+    padding: 0 100px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    display: none;
+    transition: .5s;
+}
+
+.wrapper {
+    display: none;
+    height: 100vh;
+}
+
+.headliner {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.textholder {
+    position: relative;
+    width: 20vw;
+    height: fit-content;
+    min-height: 30vh;
+    border-radius: 10px;
+    padding: 20px 70px;
+    margin: 100px 20px;
+    background-color: rgb(245, 245, 245);
+}
+
+.textholder:nth-of-type(odd) {
+    left: 12vw;
+}
+
+.textholder:nth-of-type(even) {
+    left: 60vw;
+}
+
+.text {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #4d4d4d;
+    margin-bottom: 15px;
+}
+
+
+.h1z {
+    position: relative;
+    left: 60vw;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #ebebeb;
+    margin-bottom: 15px;
+}
+
+.texttop {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: 200;
+    line-height: 1.5;
+    color: #ebebeb;
+    margin-bottom: 15px;
+}
+
+.text br + br {
+    margin-top: 15px;
+    display: block;
+    content: "";
+}
+
+.box .boxinfo h2{
+    width: 100%;
+}
+
+.boxinfo {
+    width: 50%;
+}
+
+.text {
+    width: 100%;
+}
+
+.swiper {
+    width: 30vw;
+    height: 30vh;
+    padding-bottom: 40%;
+    border-radius: 30px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    overflow: hidden;
+    opacity: 1;
+    background-color: rgb(0, 0, 0);
+}
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: calc(50vw - 48px);
+    display: none; 
+    background-color: #141414;
+    color: #fff;
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#scrollTopBtn:hover {
+    background-color: #303030;
+    transform: translateY(-10px);
+}
+
+.section__pic_about img {
+    width: 300px;
+}
+
+.button {
+font-size: 20px;
+min-width: 120px;
+position: relative;
+cursor: pointer;
+padding: 12px 17px;
+border: 0;
+border-radius: 7px;
+box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+background: radial-gradient(
+    ellipse at bottom,
+    rgba(71, 81, 92, 1) 0%,
+    rgba(11, 21, 30, 1) 45%
+);
+color: rgb(255, 255, 255, 0.66);
+transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.button::before {
+content: "";
+width: 70%;
+height: 1px;
+position: absolute;
+bottom: 0;
+left: 15%;
+background: rgb(255, 255, 255);
+background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+);
+opacity: 0.2;
+
+transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.button:hover {
+color: rgb(255, 255, 255, 1);
+transform: scale(1.1) translateY(-3px);
+}
+
+.button:hover::before {
+opacity: 1;
+}
+
+.back {
+    display: flex;
+    height: 3em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+}
+
+.back > svg {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    transition: all 0.4s ease-in;
+}
+
+.back:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+}
+
+.back:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+}
